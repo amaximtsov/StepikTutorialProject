@@ -5,7 +5,6 @@ from .pages.basket_page import BasketPage
 from .pages.login_page import LoginPage
 
 
-
 links = ['http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0',
          'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1',
          'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2',
@@ -30,7 +29,6 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.should_be_equal_product_price()
 
 
-@pytest.mark.negative
 @pytest.mark.xfail(reason="Will be fixed later")
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
@@ -47,7 +45,6 @@ def test_guest_cant_see_success_message(browser):
     page.should_not_be_success_message()
 
 
-@pytest.mark.negative
 @pytest.mark.xfail(reason="Will be fixed later")
 def test_message_disappeared_after_adding_product_to_basket(browser):
     link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
@@ -105,6 +102,3 @@ class TestUserAddToBasketFromProductPage:
         page = ProductPage(browser, link)
         page.open()
         page.add_to_basket()
-
-
-
