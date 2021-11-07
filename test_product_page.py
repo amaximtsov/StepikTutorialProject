@@ -1,5 +1,5 @@
-from .pages.product_page import ProductPage
 import pytest
+from .pages.product_page import ProductPage
 
 
 links = ['http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0',
@@ -64,3 +64,7 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
     page.go_to_login_page()
+
+
+
+
